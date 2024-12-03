@@ -1,0 +1,48 @@
+{
+  "name": "maoming-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@jiaminghi/data-view-react": "^1.2.5",
+    "axios": "^1.7.8",
+    "cra-template": "1.2.0",
+    "leaflet": "^1.9.4",
+    "leaflet-defaulticon-compatibility": "^0.1.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-leaflet": "^4.2.1",
+    "react-router-dom": "^7.0.2",
+    "react-scripts": "5.0.1",
+    "sass": "^1.81.1",
+    "sass-loader": "^16.0.3",
+    "techui-react-lite": "^0.0.6"
+  },
+  "scripts": {
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
+    "eject": "craco eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@craco/craco": "^7.1.0",
+    "craco-alias": "^3.0.1"
+  }
+}

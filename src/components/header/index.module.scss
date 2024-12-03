@@ -1,0 +1,10 @@
+.header {
+  background-image: url("./assets/header.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  height: var(--primary_header_height);
+  .title {
+    margin: 0;
+    line-height: var(--primary_header_height);
+  }
+}
