@@ -2,7 +2,7 @@ import "./App.css";
 import { RouterProvider } from "react-router-dom";
 import routers from "./router.js";
 import { GlobalProvider } from "./store/globalContext";
-import "./components/css/index.scss";
+import "@/assets/css/index.scss";
 
 const App = () => {
   return (

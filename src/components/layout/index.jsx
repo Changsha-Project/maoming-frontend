@@ -1,16 +1,16 @@
 import styles from "./index.module.scss";
-import { FullScreenContainer } from "@jiaminghi/data-view-react";
 import { Outlet } from "react-router-dom";
-
+import Header from "@components/header";
+import FitScreen from "@fit-screen/react";
 const Layout = () => {
   return (
     <>
-      <FullScreenContainer>
+      <FitScreen width={1920} height={1080} mode="fit">
         <div className={styles.container}>
+          <Header />
           <Outlet />
         </div>
-        ;
-      </FullScreenContainer>
+      </FitScreen>
     </>
   );
 };

@@ -1,0 +1,18 @@
+:root {
+  // --primary_content_background_1_head: linear-gradient(
+  //   to bottom,
+  //   rgb(46, 112, 156),
+  //   rgba(110, 156, 230, 0.6)
+  // );
+  --primary_content_background_1_head: rgba(13, 60, 91, 0.9);
+  --primary_content_background_1_left: linear-gradient(
+    to right,
+    rgba(33, 83, 116, 0.9),
+    rgba(110, 156, 230, 0.6)
+  );
+  --primary_content_background_1_right: linear-gradient(
+    to left,
+    rgb(46, 112, 156),
+    rgba(110, 156, 230, 0.6)
+  );
+}

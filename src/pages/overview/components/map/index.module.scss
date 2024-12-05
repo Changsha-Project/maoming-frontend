@@ -1,0 +1,36 @@
+.container {
+  width: 100%;
+  //   height: calc(100% - var(--primary_header_height));
+  height: 100%;
+}
+
+.tools_wrap {
+  position: absolute;
+  left: 0;
+  bottom: 20px;
+  width: 100%;
+  z-index: 500;
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-around;
+  .box {
+    width: 16%;
+    max-width: 200px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+    background-color: rgba(39, 176, 235, 0.9);
+    cursor: pointer;
+  }
+  .active {
+    background-color: rgb(0, 84, 135);
+  }
+}
+
+:global {
+  .leaflet-container {
+    background: none;
+  }
+}

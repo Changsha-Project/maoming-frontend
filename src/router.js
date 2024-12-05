@@ -17,9 +17,14 @@ const routers = createBrowserRouter([
     name: "screen",
     children: [
       {
+        index: true,
+        element: <Navigate to="/screen/overview" replace />,
+      },
+      {
         path: "overview",
         element: <Overview_page />,
         name: "overview",
+        index: true,
       },
     ],
   },
