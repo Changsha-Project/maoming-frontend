@@ -1,4 +1,5 @@
 import styles from "./index.module.scss";
+import { useRef } from "react";
 import Map from "./components/map";
 // import Header from "@components/header";
 import { BorderBox8, ScrollBoard } from "@jiaminghi/data-view-react";
@@ -6,8 +7,23 @@ import Wrap01 from "@components/content_wrap/wrap01";
 import Wrap02 from "@components/content_wrap/wrap02";
 import IndustryBarChart from "./components/IndustryBarChart";
 import BrandPlantingRatio from "./components/BrandPlantingRatio";
+import { Carousel } from "antd";
+import { RightOutlined, LeftOutlined } from "@ant-design/icons";
+
+import Slide1_img from "./assets/slide1.png";
+import Slide2_img from "./assets/slide2.png";
+import Slide3_img from "./assets/slide3.png";
+import Slide4_img from "./assets/slide4.png";
+import Slide5_img from "./assets/slide5.png";
 
 const Overview = () => {
+  //    幻灯片ref
+  const CarouselRef = useRef();
+  //    切换幻灯片
+  const handleCarouselRef = (type = "next") => {
+    CarouselRef?.current?.[type]?.();
+  };
+
   return (
     <div class={styles.container}>
       <div class={`${styles.content_wrap} ${styles.leftSide}`}>
@@ -96,6 +112,52 @@ const Overview = () => {
       <div class={`${styles.content_wrap} ${styles.rightSide}`}>
         <Wrap02 title="种植品种占比">
           <BrandPlantingRatio />
+        </Wrap02>
+        <Wrap02 title="园区监控">
+          <div className={styles.slide_wrap}>
+            <Carousel
+              ref={CarouselRef}
+              autoplay
+              autoplaySpeed={5000}
+              dots={false}
+              draggable
+            >
+              <div className={styles.slide}>
+                <img src={Slide1_img} alt="Image 1" />
+                <div className={styles.text}>花苞红A1-02</div>
+              </div>
+              <div className={styles.slide}>
+                <img src={Slide2_img} alt="Image 1" />
+                <div className={styles.text}>花苞红A1-02</div>
+              </div>
+              <div className={styles.slide}>
+                <img src={Slide3_img} alt="Image 1" />
+                <div className={styles.text}>花苞红A1-02</div>
+              </div>
+              <div className={styles.slide}>
+                <img src={Slide4_img} alt="Image 1" />
+                <div className={styles.text}>花苞红A1-02</div>
+              </div>
+              <div className={styles.slide}>
+                <img src={Slide5_img} alt="Image 1" />
+                <div className={styles.text}>花苞红A1-02</div>
+              </div>
+            </Carousel>
+            <div className={styles.arrow_group}>
+              <div
+                className={styles.leftArrow}
+                onClick={() => handleCarouselRef("prev")}
+              >
+                <LeftOutlined style={{ fontSize: "36px" }} />
+              </div>
+              <div
+                className={styles.rightArrow}
+                onClick={() => handleCarouselRef("next")}
+              >
+                <RightOutlined style={{ fontSize: "36px" }} />
+              </div>
+            </div>
+          </div>
         </Wrap02>
       </div>
     </div>

@@ -45,7 +45,8 @@ const Wrap = ({ title = "", children, className = "", style = {} }) => {
           </defs>
           <polyline
             class="svg-bg"
-            fill="#05192e"
+            // fill="#05192e"
+            fill="rgba(0,0,0,0)"
             filter=""
             stroke="#0f4c8a"
             stroke-width="1"

@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import * as echarts from "echarts";
+import styles from "./index.module.scss";
 const Chart = () => {
   // 图表容器引用
   const chartRef = useRef(null);
@@ -14,85 +15,47 @@ const Chart = () => {
     // 定义图表配置
     const options = {
       title: {
-        text: "Nightingale Chart",
-        subtext: "Fake Data",
-        left: "center",
+        // text: "Nightingale Chart",
+        // subtext: "Fake Data",
+        // left: "center",
       },
       tooltip: {
         trigger: "item",
         formatter: "{a} <br/>{b} : {c} ({d}%)",
       },
-      legend: {
-        left: "center",
-        top: "bottom",
-        data: [
-          "rose1",
-          "rose2",
-          "rose3",
-          "rose4",
-          "rose5",
-          "rose6",
-          "rose7",
-          "rose8",
-        ],
-      },
-      toolbox: {
-        show: true,
-        feature: {
-          mark: { show: true },
-          dataView: { show: true, readOnly: false },
-          restore: { show: true },
-          saveAsImage: { show: true },
-        },
-      },
       series: [
-        {
-          name: "Radius Mode",
-          type: "pie",
-          radius: [20, 140],
-          center: ["25%", "50%"],
-          roseType: "radius",
-          itemStyle: {
-            borderRadius: 5,
-          },
-          label: {
-            show: false,
-          },
-          emphasis: {
-            label: {
-              show: true,
-            },
-          },
-          data: [
-            { value: 40, name: "rose 1" },
-            { value: 33, name: "rose 2" },
-            { value: 28, name: "rose 3" },
-            { value: 22, name: "rose 4" },
-            { value: 20, name: "rose 5" },
-            { value: 15, name: "rose 6" },
-            { value: 12, name: "rose 7" },
-            { value: 10, name: "rose 8" },
-          ],
-        },
         {
           name: "Area Mode",
           type: "pie",
-          radius: [20, 140],
-          center: ["75%", "50%"],
+          radius: [16, 120],
+          center: ["50%", "50%"],
           roseType: "area",
           itemStyle: {
             borderRadius: 5,
           },
+          textStyle: {
+            // 设置 legend 中字体的颜色
+            color: (params) => {
+              // 通过 `params` 获取饼块颜色，并将其应用到 legend 字体上
+              console.log("params", params);
+              return params.color;
+            },
+          },
           data: [
-            { value: 30, name: "rose 1" },
-            { value: 28, name: "rose 2" },
-            { value: 26, name: "rose 3" },
-            { value: 24, name: "rose 4" },
-            { value: 22, name: "rose 5" },
-            { value: 20, name: "rose 6" },
-            { value: 18, name: "rose 7" },
-            { value: 16, name: "rose 8" },
+            { value: 30, name: "白木 1", itemStyle: { color: "#c12e34" } },
+            { value: 28, name: "白木 2", itemStyle: { color: "#e6b600" } },
+            { value: 26, name: "白木 3", itemStyle: { color: "#0098d9" } },
+            { value: 24, name: "白木 4", itemStyle: { color: "#2b821d" } },
+            { value: 22, name: "白木 5", itemStyle: { color: "#005eaa" } },
+            { value: 20, name: "白木 6", itemStyle: { color: "#339ca8" } },
+            { value: 18, name: "白木 7", itemStyle: { color: "#cda819" } },
+            { value: 16, name: "白木 8", itemStyle: { color: "#32a487" } },
           ],
+          label: {
+            show: true,
+            formatter: "{b}",
+            color: "inherit",
+          },
         },
       ],
     };
@@ -107,25 +70,9 @@ const Chart = () => {
   }, []);
 
   return (
-    <div
-      style={{
-        padding: "20px",
-        borderRadius: "10px",
-        position: "relative",
-        width: "100%", // 调整为父容器宽度
-        height: "100%", // 设置固定高度
-        overflow: "hidden", // 避免溢出
-        color: "#fff",
-      }}
-    >
+    <div className={styles.container}>
       {/* 图表容器 */}
-      <div
-        ref={chartRef}
-        style={{
-          width: "100%",
-          height: "100%",
-        }}
-      ></div>
+      <div ref={chartRef} className={styles.chart}></div>
     </div>
   );
 };
