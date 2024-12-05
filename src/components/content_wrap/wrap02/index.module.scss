@@ -1,0 +1,42 @@
+.container {
+  width: 100%;
+  padding-bottom: calc(100% * 270 / 378);
+  position: relative;
+  color: #fff;
+  .background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotateY(180deg);
+    .svg_content {
+    }
+  }
+  .content_wrap {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    .title {
+      position: absolute;
+      left: 50px;
+      top: 0px;
+      font-size: 20px;
+      font-family: WanShiQuanXing;
+    }
+    .content {
+      height: 100%;
+      padding: 16px;
+      padding-top: 40px;
+      padding-bottom: 0px;
+      white-space: normal;
+      word-break: normal;
+    }
+  }
+}

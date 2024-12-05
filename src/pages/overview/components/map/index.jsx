@@ -30,24 +30,21 @@ const Boundaries = () => {
 const Markers = ({ locations = [] }) => {
   const map = useMap();
   //  当前保存的标点
-  const markersRef = useRef([]);
+  const markersLayer = useRef(L.layerGroup().addTo(map));
+
   useEffect(() => {
-    console.log("locations is ", locations, markersRef.current);
+    console.log("locations is ", locations);
     // 清除旧标注点
-    markersRef?.current?.forEach((marker) => {
-      map.removeLayer(marker);
-    });
-    markersRef.current = [];
+    markersLayer.current?.clearLayers();
 
     // 添加标注点和弹窗
     const newMarkers = locations.map((location) => {
       const marker = L.marker(location.position).addTo(map);
       marker.bindPopup(`<b>${location.name}</b><br>${location.info}`);
+      // 存储新标注点
+      markersLayer.current.addLayer(marker);
       return marker;
     });
-
-    // 存储新标注点
-    markersRef.current = newMarkers;
   }, [map, locations]);
 
   return null;

@@ -5,8 +5,10 @@
   "dependencies": {
     "@fit-screen/react": "^1.0.1",
     "@jiaminghi/data-view-react": "^1.2.5",
+    "antd": "^5.22.3",
     "axios": "^1.7.8",
     "cra-template": "1.2.0",
+    "echarts": "^5.5.1",
     "leaflet": "^1.9.4",
     "leaflet-defaulticon-compatibility": "^0.1.2",
     "patch-package": "^8.0.0",
