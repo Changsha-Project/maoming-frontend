@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef } from "react";
+import styles from "./index.module.scss";
 import { MapContainer, TileLayer, useMap } from "react-leaflet";
 import L from "leaflet";
 import "leaflet-defaulticon-compatibility";
@@ -6,7 +7,7 @@ import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility
 import "leaflet/dist/leaflet.css";
 import BoundaryJson from "./maoming2.json";
 import { Loading, BorderBox10 } from "@jiaminghi/data-view-react";
-import styles from "./index.module.scss";
+import HeadIcons from "./headIcons";
 
 // 边界加载器组件
 const Boundaries = () => {
@@ -234,6 +235,9 @@ const MapComponent = () => {
           setLocationIndex={setLocationIndex}
           locationIndex={locationIndex}
         />
+
+        {/* 头部 icon */}
+        <HeadIcons />
       </MapContainer>
     </div>
   );
