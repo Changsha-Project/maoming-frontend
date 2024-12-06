@@ -7,6 +7,7 @@ import Wrap01 from "@components/content_wrap/wrap01";
 import Wrap02 from "@components/content_wrap/wrap02";
 import IndustryBarChart from "./components/IndustryBarChart";
 import BrandPlantingRatio from "./components/BrandPlantingRatio";
+import ClassScatterChart from "./components/ClassScatterChart";
 import { Carousel } from "antd";
 import { RightOutlined, LeftOutlined } from "@ant-design/icons";
 
@@ -158,6 +159,9 @@ const Overview = () => {
               </div>
             </div>
           </div>
+        </Wrap02>
+        <Wrap02 title="加工品类词条">
+          <ClassScatterChart />
         </Wrap02>
       </div>
     </div>
