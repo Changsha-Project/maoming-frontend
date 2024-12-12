@@ -1,9 +1,5 @@
 import styles from "./index.module.scss";
 import { useMatches, useNavigate } from "react-router-dom";
-import Icon1 from "./assets/icon-1.svg";
-import Icon2 from "./assets/icon-2.svg";
-import Icon3 from "./assets/icon-3.svg";
-import Icon4 from "./assets/icon-4.svg";
 
 const Header = () => {
   const routerMatchs = useMatches();
