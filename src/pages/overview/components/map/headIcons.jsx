@@ -1,5 +1,5 @@
 import styles from "./index.module.scss";
-import { BorderBox6 } from "@jiaminghi/data-view-react";
+import { BorderBox6, Decoration9 } from "@jiaminghi/data-view-react";
 
 const Index = () => {
   return (

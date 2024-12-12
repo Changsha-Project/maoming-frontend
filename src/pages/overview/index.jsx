@@ -37,6 +37,7 @@ const Overview = () => {
               display: "flex",
               justifyContent: "center",
               height: "100%",
+              marginTop: "5px",
             }}
           >
             <ScrollBoard
@@ -75,6 +76,7 @@ const Overview = () => {
               display: "flex",
               justifyContent: "center",
               height: "100%",
+              marginTop: "5px",
             }}
           >
             <ScrollBoard

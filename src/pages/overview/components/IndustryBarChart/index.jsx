@@ -78,7 +78,7 @@ const BarChart = () => {
   return (
     <div
       style={{
-        padding: "20px",
+        padding: "16px",
         borderRadius: "10px",
         position: "relative",
         width: "100%", // 调整为父容器宽度
